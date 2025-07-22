@@ -13,7 +13,7 @@ from beets import library
 
 from beets.dbcore import types
 from beets.library import Library, Item, parse_query_parts
-from beets.ui import Subcommand, decargs
+from beets.ui import Subcommand
 from confuse import Subview
 
 from beetsplug.describe import common
@@ -50,7 +50,7 @@ class DescribeCommand(Subcommand):
 
     def func(self, lib: Library, options, arguments):
         self.lib = lib
-        self.query = decargs(arguments)
+        self.query = arguments
 
         # You must either pass a training name or request listing
         if len(self.query) < 1 and not options.version:
