@@ -8,7 +8,6 @@ import logging
 import os
 import sys
 
-from beets import library
 from beets.dbcore import types
 from beets.library import Item
 
@@ -71,7 +70,7 @@ def get_dbcore_numeric_types():
         types.PaddedInt,
         types.NullPaddedInt,
         types.ScaledInt,
-        library.DurationType
+        types.DurationType
     ]
 
     for dt in dbcore_types:
